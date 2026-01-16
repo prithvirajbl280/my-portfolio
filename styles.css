@@ -1030,7 +1030,7 @@ h6 {
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
-.timeline-content {
+/* .timeline-content {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -1068,8 +1068,120 @@ h6 {
 
 .timeline-content p strong {
     color: var(--text-primary);
+} */
+
+
+.timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: var(--transition-base);
+    position: relative;
 }
 
+.timeline-content:hover {
+    border-color: var(--accent-primary);
+    transform: translateX(8px);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.experience-header h3 {
+    font-size: 1.1rem;
+}
+
+.experience-date {
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    font-weight: 500;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+}
+
+.timeline-content p strong {
+    color: var(--text-primary);
+}
+
+/* Expandable Experience Items */
+.timeline-content.expandable {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.experience-preview {
+    display: block;
+    transition: opacity var(--transition-base);
+}
+
+.experience-full {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease;
+}
+
+.experience-bullets {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 12px;
+}
+
+.experience-bullets li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding-left: 24px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.experience-bullets li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.experience-bullets li strong {
+    color: var(--text-primary);
+}
+
+.expand-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0.6;
+    transition: opacity var(--transition-base);
+}
+
+/* Expanded State */
+.timeline-content.expandable:hover .experience-preview {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+}
+
+.timeline-content.expandable:hover .experience-full {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.timeline-content.expandable:hover .expand-hint {
+    opacity: 0;
+}
 /* =============================================
    CONTACT SECTION
    ============================================= */
