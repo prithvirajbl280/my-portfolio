@@ -65,7 +65,7 @@ function initScrollReveal() {
 
 // Typing Effect for Hero
 function initTypingEffect() {
-    const titles = [ 'Tech Leader', 'Product Management' , 'Project Management', 'Problem Solver', 'Software Developer', 'Full Stack Engineer',];
+    const titles = ['Product-Minded Developer', 'Software Developer', 'Business Analyst', 'Problem Solver', 'Full Stack Engineer'];
     const element = document.querySelector('.hero-title');
     if (!element) return;
 
