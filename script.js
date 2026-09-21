@@ -44,8 +44,8 @@ function initSmoothScroll() {
 // Scroll Reveal Animation
 function initScrollReveal() {
     const elements = document.querySelectorAll(
-        '.section-title, .about-content, .skill-category, .project-card, ' +
-        '.timeline-item, .contact-content, .code-window'
+        '.section-title, .about-content, .skill-category, .project-card, .project-row, ' +
+        '.timeline-item, .contact-content, .code-window, .work-card'
     );
 
     const observer = new IntersectionObserver((entries) => {
