@@ -45,7 +45,7 @@ function initSmoothScroll() {
 function initScrollReveal() {
     const elements = document.querySelectorAll(
         '.section-title, .about-content, .skill-category, .project-card, .project-row, ' +
-        '.timeline-item, .contact-content, .code-window, .work-card'
+        '.timeline-item, .contact-content, .code-window, .work-card, .work-sidebar'
     );
 
     const observer = new IntersectionObserver((entries) => {
