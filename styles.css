@@ -883,12 +883,14 @@ h6 {
 
 .work-layout {
     display: grid;
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 1fr 380px;
     gap: 28px;
     align-items: stretch;
 }
 
 .work-card {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05));
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -906,7 +908,7 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     flex-wrap: wrap;
     gap: 12px;
 }
@@ -940,12 +942,12 @@ h6 {
 }
 
 .work-bullets li {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     padding-left: 28px;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
     position: relative;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .work-bullets li:last-child {
@@ -965,10 +967,12 @@ h6 {
     color: var(--text-primary);
 }
 
+/* Pushes the certificate button to the bottom of the card */
 .work-card-links {
     display: flex;
     gap: 16px;
-    margin-top: 28px;
+    margin-top: auto;
+    padding-top: 28px;
     flex-wrap: wrap;
 }
 
@@ -1003,13 +1007,15 @@ h6 {
     gap: 16px;
 }
 
+/* Fixed-size box: the iframe can no longer stretch the row */
 .linkedin-embed {
-    flex: 1;
+    position: relative;
+    flex: none;
+    height: 520px;
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--border-color);
     background: var(--bg-card);
-    min-height: 400px;
     transition: var(--transition-base);
 }
 
@@ -1019,9 +1025,10 @@ h6 {
 }
 
 .linkedin-embed iframe {
-    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    min-height: 400px;
+    height: 100%;
     border: none;
 }
 
@@ -1208,47 +1215,6 @@ h6 {
     box-shadow: 0 0 20px var(--accent-glow);
 }
 
-/* .timeline-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    padding: 24px;
-    transition: var(--transition-base);
-}
-
-.timeline-content:hover {
-    border-color: var(--accent-primary);
-    transform: translateX(8px);
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.experience-header h3 {
-    font-size: 1.1rem;
-}
-
-.experience-date {
-    font-size: 0.85rem;
-    color: var(--accent-primary);
-    font-weight: 500;
-}
-
-.timeline-content p {
-    font-size: 0.95rem;
-}
-
-.timeline-content p strong {
-    color: var(--text-primary);
-} */
-
-
 .timeline-content {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -1347,6 +1313,7 @@ h6 {
 .timeline-content.expandable:hover .expand-hint {
     opacity: 0;
 }
+
 /* =============================================
    CONTACT SECTION
    ============================================= */
@@ -1591,6 +1558,11 @@ h6 {
         grid-template-columns: 1fr;
     }
 
+    /* More room for the LinkedIn post on phones */
+    .linkedin-embed {
+        height: 560px;
+    }
+
     .code-content {
         font-size: 0.75rem;
     }
@@ -1621,15 +1593,7 @@ h6 {
         min-height: auto;
     }
 
-    .linkedin-embed {
-        min-height: 300px;
-    }
-
-    .linkedin-embed iframe {
-        min-height: 300px;
-    }
-
-    .social-link {
+    .photo-social-link {
         width: 46px;
         height: 46px;
     }
